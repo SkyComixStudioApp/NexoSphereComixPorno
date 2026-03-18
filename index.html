@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+ñ<!DOCTYPE html>
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
@@ -32,6 +32,7 @@
       --card-shadow: 0 6px 18px rgba(0,0,0,0.6);
       --page-side-padding: 12px;
       --bottom-bar-bg: #000000; /* Fondo negro */
+      --bottom-bar-height: 72px; /* Un poco más gorda */
     }
 
     html, body { 
@@ -47,7 +48,7 @@
       font-family: 'SkyCustomFont', sans-serif;
       background: #000;
       color: var(--text-red);
-      padding-bottom: 70px; /* Espacio para la barra inferior fija */
+      padding-bottom: var(--bottom-bar-height); /* Espacio para la barra inferior fija */
       -webkit-font-smoothing: antialiased;
       -moz-osx-font-smoothing: grayscale;
     }
@@ -156,7 +157,7 @@
     /* ========== CONTENEDOR DE GÉNEROS ========== */
     .genres-container {
       display: none;
-      padding: 84px 12px calc(70px + 16px); /* Ajustado para la barra fija */
+      padding: 84px 12px calc(var(--bottom-bar-height) + 16px); /* Ajustado para la barra fija */
       flex-wrap: wrap;
       gap: 6px;
     }
@@ -320,7 +321,7 @@
         display: grid; 
         grid-template-columns: repeat(4, 1fr);
         align-items: center; 
-        height: 64px; 
+        height: var(--bottom-bar-height); /* 72px - más gorda */
         z-index: 30; 
         padding: 0;
         box-shadow: none; /* Quitamos sombra para que sea más plana */
@@ -336,7 +337,7 @@
         align-items:center; 
         justify-content:center; 
         cursor:pointer; 
-        padding: 8px 12px; 
+        padding: 10px 14px; /* Aumentado ligeramente el padding */
         border-radius: 999px; 
         text-align: center; 
         color: var(--icon-color-normal); 
@@ -345,8 +346,8 @@
         justify-self: center;
     }
 
-    .bottom-bar .item i { font-size: 20px; color: inherit; }
-    .bottom-bar .item img.home-icon { width:20px; height:20px; display:block; object-fit:contain; }
+    .bottom-bar .item i { font-size: 24px; /* Iconos un poco más grandes */ color: inherit; }
+    .bottom-bar .item img.home-icon { width:24px; height:24px; display:block; object-fit:contain; } /* Icono de inicio también más grande */
 
     .bottom-bar .item .item-label { display: none; }
     .bottom-bar .item.active { color: var(--icon-color-active); }
@@ -578,7 +579,7 @@
 
   <header class="top-bar">
     <!-- NUEVO LOGO -->
-    <img src="https://i.ibb.co/G45CqGfQ/IMG-20260317-175523.png" alt="Logo" class="logo" />
+    <img src="https://i.ibb.co/35cXXgk5/IMG-20260309-131853.png" alt="Logo" class="logo" />
     <i id="search-icon" class="fas fa-search search-icon"></i>
   </header>
 
