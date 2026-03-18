@@ -31,7 +31,7 @@
       --card-blur-strength: 6px;
       --card-shadow: 0 6px 18px rgba(0,0,0,0.6);
       --page-side-padding: 12px;
-      --bottom-bar-bg: #0D0D0D;
+      --bottom-bar-bg: #000000; /* Fondo negro */
     }
 
     html, body { 
@@ -47,7 +47,7 @@
       font-family: 'SkyCustomFont', sans-serif;
       background: #000;
       color: var(--text-red);
-      padding-bottom: 70px;
+      padding-bottom: 70px; /* Espacio para la barra inferior fija */
       -webkit-font-smoothing: antialiased;
       -moz-osx-font-smoothing: grayscale;
     }
@@ -156,7 +156,7 @@
     /* ========== CONTENEDOR DE GÉNEROS ========== */
     .genres-container {
       display: none;
-      padding: 84px 12px calc(60px + 16px);
+      padding: 84px 12px calc(70px + 16px); /* Ajustado para la barra fija */
       flex-wrap: wrap;
       gap: 6px;
     }
@@ -309,26 +309,26 @@
       -moz-osx-font-smoothing: grayscale;
     }
 
-    /* ========== BARRA INFERIOR (NAV) ========== */
+    /* ========== BARRA INFERIOR (NAV) - FIJA EN LA PARTE INFERIOR ========== */
     .bottom-bar { 
         position: fixed; 
-        bottom: 10px; 
-        left: 10px; 
-        right: 10px; 
-        background: var(--bottom-bar-bg);
-        border-top: 1px solid rgba(255,255,255,0.1);
+        bottom: 0; 
+        left: 0; 
+        right: 0; 
+        background: var(--bottom-bar-bg); /* Negro */
+        border-top: 1px solid rgba(255,255,255,0.1); /* Línea superior añadida */
         display: grid; 
         grid-template-columns: repeat(4, 1fr);
         align-items: center; 
         height: 64px; 
         z-index: 30; 
         padding: 0;
-        border-radius: 999px;
-        box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+        box-shadow: none; /* Quitamos sombra para que sea más plana */
         /* Para pantallas grandes: ancho fijo y centrado */
         max-width: 600px;
         margin-left: auto;
         margin-right: auto;
+        width: 100%;
     }
 
     .bottom-bar .item { 
@@ -492,7 +492,7 @@
     @media (min-width: 768px) {
       :root {
         --page-side-padding: 20px;
-        --card-title-font-size: 11px; /* ligeramente más grande */
+        --card-title-font-size: 11px;
       }
       .cards-container {
         grid-template-columns: repeat(4, 1fr);
@@ -500,6 +500,8 @@
       }
       .bottom-bar {
         max-width: 500px;
+        left: 50%;
+        transform: translateX(-50%);
       }
       .modal-gallery {
         max-width: 1000px;
@@ -526,6 +528,8 @@
       }
       .bottom-bar {
         max-width: 600px;
+        left: 50%;
+        transform: translateX(-50%);
       }
       .top-bar {
         max-width: 1400px;
@@ -574,7 +578,7 @@
 
   <header class="top-bar">
     <!-- NUEVO LOGO -->
-    <img src="https://i.ibb.co/35cXXgk5/IMG-20260309-131853.png" alt="Logo" class="logo" />
+    <img src="https://i.ibb.co/G45CqGfQ/IMG-20260317-175523.png" alt="Logo" class="logo" />
     <i id="search-icon" class="fas fa-search search-icon"></i>
   </header>
 
@@ -642,6 +646,7 @@
     const searchWrapper   = document.getElementById('search-wrapper'); 
 
     const images = [
+
       {
         src: 'https://imges.sexkomix2.com/uploads_images/comic-porno-the-yellow-fantasy-16--la-lista--vcp-comico-de-sexo-hizo-un-trato-2025-08-10/comic-porno-the-yellow-fantasy-16--la-lista--vcp-comico-de-sexo-hizo-un-trato-2025-08-10-408404787.jpg',
         text: 'THE YELLOW FANTASY 16  LA LISTA  VCP',
